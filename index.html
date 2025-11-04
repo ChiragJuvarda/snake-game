@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Advanced</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div class="menu-screen" id="menuScreen">
+            <div class="menu-content">
+                <h1 class="game-title">
+                    <span class="title-text">Snake Game</span>
+                    <span class="snake-animation">🐍</span>
+                </h1>
+                <p class="subtitle">Classic Game with Levels</p>
+                
+                <div class="difficulty-selector">
+                    <h2>Select Difficulty</h2>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn" data-level="1">
+                            <span class="level-name">Easy</span>
+                            <span class="level-desc">Speed: Slow</span>
+                        </button>
+                        <button class="difficulty-btn" data-level="2">
+                            <span class="level-name">Medium</span>
+                            <span class="level-desc">Speed: Normal</span>
+                        </button>
+                        <button class="difficulty-btn" data-level="3">
+                            <span class="level-name">Hard</span>
+                            <span class="level-desc">Speed: Fast</span>
+                        </button>
+                        <button class="difficulty-btn" data-level="4">
+                            <span class="level-name">Extreme</span>
+                            <span class="level-desc">Speed: Very Fast</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-info">
+                    <div class="info-item">
+                        <p><strong>🎮 Controls:</strong></p>
+                        <p>Arrow Keys or WASD to move</p>
+                        <p>Space to pause/resume</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game HUD -->
+        <div class="game-hud" id="gameHUD">
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-label">Level</span>
+                    <span class="hud-value" id="levelDisplay">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Score</span>
+                    <span class="hud-value" id="scoreDisplay">0</span>
+                </div>
+            </div>
+            
+            <div class="hud-center">
+                <h2 id="gameTitle">Snake Game</h2>
+            </div>
+            
+            <div class="hud-right">
+                <div class="hud-item">
+                    <span class="hud-label">Speed</span>
+                    <span class="hud-value" id="speedDisplay">Normal</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Best Score</span>
+                    <span class="hud-value" id="bestScoreDisplay">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <!-- Controls for Mobile -->
+        <div class="mobile-controls" id="mobileControls">
+            <button class="btn-up" id="btnUp">▲</button>
+            <div class="btn-row">
+                <button class="btn-left" id="btnLeft">◄</button>
+                <button class="btn-pause" id="btnPause">⏸</button>
+                <button class="btn-right" id="btnRight">►</button>
+            </div>
+            <button class="btn-down" id="btnDown">▼</button>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="game-stats" id="gameStats">
+            <div class="stat-item">
+                <span class="stat-label">Food Eaten:</span>
+                <span class="stat-value" id="foodEaten">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Snake Length:</span>
+                <span class="stat-value" id="snakeLength">3</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Time:</span>
+                <span class="stat-value" id="timeDisplay">0s</span>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over-screen" id="gameOverScreen">
+            <div class="game-over-content">
+                <h2>Game Over!</h2>
+                <div class="final-stats">
+                    <p><span>Final Score:</span> <span id="finalScore">0</span></p>
+                    <p><span>Level Reached:</span> <span id="finalLevel">1</span></p>
+                    <p><span>Snake Length:</span> <span id="finalLength">3</span></p>
+                    <p><span>Time Played:</span> <span id="finalTime">0s</span></p>
+                </div>
+                <div class="game-over-buttons">
+                    <button class="btn-primary" id="restartBtn">Play Again</button>
+                    <button class="btn-secondary" id="menuBtn">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pause Screen -->
+        <div class="pause-screen" id="pauseScreen">
+            <div class="pause-content">
+                <h2>Game Paused</h2>
+                <p>Press Space or Resume to continue</p>
+                <div class="pause-buttons">
+                    <button class="btn-primary" id="resumeBtn">Resume</button>
+                    <button class="btn-secondary" id="pauseMenuBtn">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
